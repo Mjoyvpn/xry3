@@ -3,7 +3,6 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
-
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -15,11 +14,6 @@ echo "Progress..."
 sleep 3
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
-if [ "$res" = "Permission Accepted..." ]; then
-green "Permission Accepted.."
-else
-red "Permission Denied!"
 exit 0
 fi
 echo -e "
@@ -57,7 +51,6 @@ apt -y install chrony
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
-
 # install xray
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
@@ -74,8 +67,6 @@ touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
-
-
 
 ## crt xray
 systemctl stop nginx
@@ -494,7 +485,6 @@ sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_pass grpc://127.0.0.1:30310;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-
 sleep 1
 echo -e "[ ${green}INFO$NC ] Installing bbr.."
 #wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/kenDevXD/src/main/dll/bbr.sh"
@@ -524,8 +514,6 @@ sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "xray/Vmess"
 yellow "xray/Vless"
-
-
 
 mv /root/domain /etc/xray/ 
 if [ -f /root/scdomain ];then
