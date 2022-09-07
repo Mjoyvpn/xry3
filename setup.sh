@@ -284,7 +284,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "=====================-[ SCRIPT RIDWAN ]-===================="
+echo "=====================-[ BgVpn ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -326,7 +326,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Created By KennXV ]-==============="
+echo "===============-[ Script Created By BgVpn ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
