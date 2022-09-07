@@ -3,8 +3,6 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
-
-
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -40,7 +38,6 @@ touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
-
 
 echo -e "[ ${tyblue}NOTES${NC} ] Proses Sebelum Install.. "
 sleep 1
@@ -120,21 +117,6 @@ echo -e "[ ${green}INFO${NC} ] Proses install file"
 apt install git curl -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Bagus ... installation file sudah ready"
 sleep 2
-echo -ne "[ ${green}INFO${NC} ] Check perizinan : "
-
-PERMISSION
-if [ -f /home/needupdate ]; then
-red "Proses Script Update!!!"
-exit 0
-elif [ "$res" = "Perizinan Diberikan..." ]; then
-green "Perizinan Diberikan..."
-else
-red "Perizinan Ditolak..."
-rm setup.sh > /dev/null 2>&1
-sleep 10
-exit 0
-fi
-sleep 3
 
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
