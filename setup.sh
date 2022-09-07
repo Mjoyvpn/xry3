@@ -115,7 +115,7 @@ chmod 644 /root/.profile
 
 echo -e "[ ${green}INFO${NC} ] Proses install file"
 apt install git curl -y >/dev/null 2>&1
-echo -e "[ ${green}INFO${NC} ] Bagus ... installation file sudah ready"
+echo -e "[ ${green}INFO${NC} ] Joss ... installation file sudah ready"
 sleep 2
 
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
